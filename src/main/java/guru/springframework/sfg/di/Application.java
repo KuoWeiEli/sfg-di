@@ -1,6 +1,7 @@
 package guru.springframework.sfg.di;
 
 import guru.springframework.sfg.di.controllers.*;
+import guru.springframework.sfg.di.controllers.PetController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +12,10 @@ public class Application {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
+		PetController petController = ctx.getBean("petController", PetController.class);
+		System.out.println("--- The Best Pet is ---");
+		System.out.println(petController.whichPetIsTheBest());
+
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
 
@@ -19,16 +24,16 @@ public class Application {
 		System.out.println(myController.sayHello());
 
 		System.out.println("----- Properties");
-		PropertiesInjectedController propertiesInjectedController = (PropertiesInjectedController) ctx.getBean("propertiesInjectedController");
-		propertiesInjectedController.getGreeting();
+		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+		System.out.println(propertyInjectedController.getGreeting());
 
 		System.out.println("----- Setter");
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-		setterInjectedController.getGreeting();
+		System.out.println(setterInjectedController.getGreeting());
 
 		System.out.println("----- Constructor");
-		ConstructInjectedController constructInjectedController = (ConstructInjectedController) ctx.getBean("constructInjectedController");
-		constructInjectedController.getGreeting();
+		ConstructorInjectedController constructInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
+		System.out.println(constructInjectedController.getGreeting());
 
 	}
 

@@ -1,4 +1,4 @@
-package guru.springframework.sfg.di.service;
+package guru.springframework.sfg.di.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,14 @@
-package guru.springframework.sfg.di.service;
+package guru.springframework.sfg.di.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile({"EN", "default"})
+@Profile("TW")
 @Service("i18nGreetingService")
-public class I18nENGreetingService implements GreetingService {
+public class I18nTWGreetingService implements GreetingService{
+
     @Override
     public String greeting() {
-        return "Hello World！ --- EN";
+        return "哈囉世界！ -- TW";
     }
 }
