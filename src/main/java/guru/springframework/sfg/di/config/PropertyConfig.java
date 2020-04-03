@@ -32,6 +32,9 @@ public class PropertyConfig {
     @Value("${guru.jms.url}")
     private String jmsUrl;
 
+    @Value("${guru.app.name}")
+    private String appName;
+
     public PropertyConfig(Environment env) {
         this.env = env;
     }
@@ -44,6 +47,9 @@ public class PropertyConfig {
 //        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
+
+        // just test application properties
+        System.out.println("APP NAME IS " + appName);
         return fakeDataSource;
     }
 
