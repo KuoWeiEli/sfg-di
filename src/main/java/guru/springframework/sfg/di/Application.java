@@ -1,7 +1,7 @@
 package guru.springframework.sfg.di;
 
 import guru.springframework.sfg.di.controllers.*;
-import guru.springframework.sfg.di.controllers.PetController;
+import guru.springframework.sfg.di.examplebean.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -35,6 +35,9 @@ public class Application {
 		ConstructorInjectedController constructInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructInjectedController.getGreeting());
 
+		System.out.println("----- Init DataSource");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser());
 	}
 
 }
