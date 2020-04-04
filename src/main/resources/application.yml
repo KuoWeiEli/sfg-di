@@ -1,0 +1,8 @@
+# yml and properties can both used by Spring Boot
+# move the jms.properties to here
+
+guru:
+  jms:
+    username: JMS_Eli
+    password: somepass
+    url: 123@abc

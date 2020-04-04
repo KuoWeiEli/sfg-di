@@ -1,0 +1,31 @@
+# this is a comment，YAML is sensitive to space. at least two spaces is recommend
+
+name: John
+# Array
+names: #Comment
+  - John
+  - Paul
+  - Ringo
+
+pound_sign: "#"
+
+# Object
+book:
+  author: Joe Buck
+  publisher: random house
+
+# Boolean
+truth: yes # YES, TRUE, true
+false: no # NO, FALSE, false
+
+# String
+string_val: "This is it's quote."
+colon_string: "my coureses: one two three"
+include_new_lines: |
+  1st line
+  2nd line
+  3th line
+ignore_new_lines: >
+  1st line
+  still 1st line
+  still 1st line

@@ -2,6 +2,7 @@ package guru.springframework.sfg.di;
 
 import guru.springframework.sfg.di.controllers.*;
 import guru.springframework.sfg.di.examplebean.FakeDataSource;
+import guru.springframework.sfg.di.examplebean.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -38,6 +39,12 @@ public class Application {
 		System.out.println("----- Init DataSource");
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUser());
+
+		System.out.println("---- JMS User Info");
+		FakeJmsBroker jmsBroker = ctx.getBean(FakeJmsBroker.class);
+		System.out.println(jmsBroker.getUser());
+
+
 	}
 
 }
