@@ -6,3 +6,11 @@ guru:
     username: JMS_Eli
     password: somepass
     url: 123@abc
+
+
+--- # file seperetor
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS_AAA
